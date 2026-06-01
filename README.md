@@ -1,66 +1,170 @@
-Ronast Acharya Portfolio
-This repository contains the source code for my personal portfolio website, a MERN stack application showcasing my projects, professional experience, and personal adventures.
+# Ronast Acharya Portfolio
 
-Technical Stack
-Frontend: React, Vite, Tailwind CSS, Framer Motion
+A modern **MERN Stack Portfolio Website** showcasing my projects, technical skills, professional experience, and personal journey as a software developer.
 
-Backend: Node.js, Express
+---
 
-Database: MongoDB
+## 🚀 About the Project
 
-Project Highlights
-FitFusion
-A full-stack gym management platform developed as a Final Year Project. Key features include:
+This portfolio serves as a central hub for my work, highlighting full-stack development projects, academic achievements, and practical experiences. The application is built using the MERN stack and features a responsive user interface with smooth animations and modern design principles.
 
-Member subscription management
+---
 
-Real-time trainer-member chat system
+## 🛠️ Tech Stack
 
-Integrated eSewa and Khalti payment gateways
+### Frontend
 
-Personalized diet plan generation and BMI calculation
+* React.js
+* Vite
+* Tailwind CSS
+* Framer Motion
 
-Adelaide Weather
-A real-time weather dashboard providing localized climate data and monthly forecasting for Adelaide, Australia.
+### Backend
 
-GhumnaJam
-A travel discovery platform for Nepal. Contributed as a Business Analyst, responsible for requirements documentation, user flow mapping, and feature specifications.
+* Node.js
+* Express.js
 
-Project Structure
-This project follows a standard MERN architecture:
+### Database
 
-/client: Contains the React frontend application.
+* MongoDB
 
-/server: Contains the Node.js/Express backend API and database integration.
+---
 
-Getting Started
-To run this project locally, ensure you have Node.js installed and follow these steps:
+## ✨ Featured Projects
 
-Clone the repository:
+### 🏋️ FitFusion
+
+A comprehensive gym management platform developed as a **Final Year Project**.
+
+**Key Features:**
+
+* Member subscription management
+* Real-time trainer-member chat system
+* eSewa and Khalti payment gateway integration
+* Personalized diet plan generation
+* BMI calculation and fitness tracking
+* Secure authentication and user management
+
+---
+
+### 🌦️ Adelaide Weather
+
+A real-time weather dashboard that provides accurate climate information and monthly forecasting for Adelaide, Australia.
+
+**Key Features:**
+
+* Real-time weather updates
+* Monthly weather forecasts
+* Responsive and user-friendly interface
+* Dynamic weather visualization
+
+---
+
+### 🧳 GhumnaJam
+
+A travel discovery platform designed to help users explore destinations across Nepal.
+
+**My Contribution (Business Analyst):**
+
+* Requirements gathering and documentation
+* User flow analysis and mapping
+* Feature specification and planning
+* Stakeholder communication and project coordination
+
+---
+
+## 📁 Project Structure
+
+```bash
+Ronast_Portfolio/
+│
+├── client/      # React Frontend Application
+├── server/      # Node.js & Express Backend API
+└── README.md
+```
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+* Node.js (Latest LTS Version)
+* npm
+* MongoDB
+
+---
+
+### Installation
+
+#### 1. Clone the Repository
+
+```bash
 git clone https://github.com/Ronast10/Ronast_Portfolio.git
+```
 
-Install dependencies for the client:
+#### 2. Install Frontend Dependencies
+
+```bash
 cd client
 npm install
+```
 
-Install dependencies for the server:
+#### 3. Install Backend Dependencies
+
+```bash
 cd ../server
 npm install
+```
 
-Create a .env file in the server directory and configure your MongoDB connection string and environment variables.
+#### 4. Configure Environment Variables
 
-Start the backend:
+Create a `.env` file inside the `server` directory and configure the required environment variables:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+```
+
+Add any additional environment variables required by your application.
+
+---
+
+### Running the Application
+
+#### Start Backend Server
+
+```bash
 cd server
 npm run dev
+```
 
-Start the frontend:
-cd ../client
+#### Start Frontend Application
+
+```bash
+cd client
 npm run dev
+```
 
-Contact
-Email: [ronastacharya@gmail.com]
+The frontend will typically be available at:
 
-GitHub: https://github.com/Ronast10
+```bash
+http://localhost:5173
+```
 
-License
-This project is open-source and available under the MIT License.
+---
+
+## 📧 Contact
+
+**Ronast Acharya**
+
+* Email: [ronastacharya@gmail.com](mailto:ronastacharya@gmail.com)
+* GitHub: https://github.com/Ronast10
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. Feel free to use, modify, and distribute the code in accordance with the license terms.
