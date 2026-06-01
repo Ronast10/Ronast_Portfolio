@@ -40,7 +40,7 @@ const adventures = {
       title: 'Bhairav Kunda',
       location: 'Sindhupalchok, Nepal',
       elevation: '4250m',
-      duration: '1 Day',
+      duration: '2 Days',
       distance: '4 to 6 km',
       description: 'A mystical trek to the sacred Bhairav Kunda lake, deep in the mountains of Sindhupalchok. Spiritual, wild and raw.',
       highlights: ['Sacred Kunda', 'Dense Pine Forests', 'Remote Villages', 'Wildlife'],
@@ -53,7 +53,7 @@ const adventures = {
       title: 'Nuwakot Ride',
       location: 'Kathmandu to Nuwakot',
       distance: '75 km',
-      duration: '5 hours',
+      duration: '3 hours',
       description: 'A historic ride to the ancient town of Nuwakot, passing through rivers, hills and old trade routes. Raw Nepali countryside at its best.',
       highlights: ['Nuwakot Durbar', 'Trishuli River', 'Hill Roads', 'Historic Town'],
       difficulty: 'Moderate',
@@ -63,7 +63,7 @@ const adventures = {
       title: 'Chitlang & Kulekhani Ride',
       location: 'Kathmandu to Chitlang to Kulekhani',
       distance: '90 km',
-      duration: '7 hours',
+      duration: '3 hours',
       description: 'One of the most scenic rides out of the valley — through the peaceful village of Chitlang and down to the stunning Kulekhani reservoir.',
       highlights: ['Chitlang Village', 'Kulekhani Reservoir', 'Valley Descents', 'Forest Trails'],
       difficulty: 'Challenging',
@@ -73,21 +73,21 @@ const adventures = {
       title: 'Sailung Ride',
       location: 'Kathmandu to Sailung',
       distance: '120 km',
-      duration: '8 hours',
+      duration: '6 hours',
       description: 'A serious mountain ride to Sailung hill — steep climbs, thin air and a 360 degree panorama of the Himalayas waiting at the top.',
       highlights: ['Himalayan Panorama', 'Steep Climbs', 'Remote Roads', 'Sunrise Point'],
       difficulty: 'Challenging',
     },
     {
-      id: 8,
-      title: 'China Border Ride',
-      location: 'Kathmandu to Rasuwagadhi',
-      distance: '150 km',
-      duration: '9 hours',
-      description: 'All the way up to the Nepal-China border at Rasuwagadhi. A legendary ride through Langtang corridor with rivers, gorges and raw mountain roads.',
-      highlights: ['Rasuwagadhi Border', 'Trishuli Gorge', 'Langtang Corridor', 'Mountain Rivers'],
-      difficulty: 'Challenging',
-    },
+      "id": 8,
+      "title": 'China Border Ride',
+      "location": 'Kathmandu to Tatopani',
+      "distance": '115 km',
+      "duration": '6 hours',
+      "description": 'A scenic journey to the Tatopani border crossing with China. This route takes you through the Araniko Highway, offering dramatic views of the Bhote Koshi River, steep canyons, and the transition into the high Himalayas.',
+      "highlights": ['Tatopani Border', 'Bhote Koshi River', 'Araniko Highway', 'Mountain Canyons'],
+      "difficulty": 'Moderate',
+    }
   ],
   sports: [
     {
@@ -193,7 +193,7 @@ export default function Adventures() {
                       { label: 'Elevation', value: trek.elevation },
                       { label: 'Duration', value: trek.duration },
                       { label: 'Distance', value: trek.distance },
-                      
+
                     ].map(stat => (
                       <div key={stat.label}>
                         <div style={{ fontSize: '0.65rem', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2px' }}>{stat.label}</div>

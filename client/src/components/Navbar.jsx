@@ -19,7 +19,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#111', textDecoration: 'none', letterSpacing: '-0.01em' }}>
-          Ronast<span style={{ fontStyle: 'italic', fontWeight: 400 }}>.</span>
+          Ronast Acharya<span style={{ fontStyle: 'italic', fontWeight: 400 }}></span>
         </Link>
 
         {/* Desktop Links */}
