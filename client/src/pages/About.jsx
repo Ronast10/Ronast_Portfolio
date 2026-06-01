@@ -92,7 +92,7 @@ export default function About() {
         <div style={{ marginBottom: '72px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '40px' }}>
             <div style={{ width: '32px', height: '1px', background: '#111' }} />
-            <span style={{ fontSize: '0.75rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#888' }}>
+            <span style={{ fontSize: '0.75rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#111' }}>
               Education
             </span>
           </div>
@@ -134,7 +134,7 @@ export default function About() {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '40px' }}>
             <div style={{ width: '32px', height: '1px', background: '#111' }} />
-            <span style={{ fontSize: '0.75rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#888' }}>
+            <span style={{ fontSize: '0.75rem', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#111' }}>
               Skills & Interests
             </span>
           </div>

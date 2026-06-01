@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50, background: 'rgba(250,250,250,0.9)', backdropFilter: 'blur(10px)', borderBottom: '1px solid #E5E5E5' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '20px 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '20px 42px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
         {/* Logo */}
         <Link to="/" style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#111', textDecoration: 'none', letterSpacing: '-0.01em' }}>
@@ -44,12 +44,6 @@ export default function Navbar() {
           Hire Me
         </a>
 
-        {/* Hamburger */}
-        <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: '5px' }} className="md:hidden">
-          <span style={{ display: 'block', width: '22px', height: '1.5px', background: '#111', transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translateY(6px)' : 'none' }} />
-          <span style={{ display: 'block', width: '22px', height: '1.5px', background: '#111', transition: 'all 0.3s', opacity: menuOpen ? 0 : 1 }} />
-          <span style={{ display: 'block', width: '22px', height: '1.5px', background: '#111', transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translateY(-6px)' : 'none' }} />
-        </button>
       </div>
 
       {/* Mobile Menu */}
