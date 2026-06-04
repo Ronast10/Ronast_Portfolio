@@ -5,7 +5,7 @@ export default function About() {
       field: 'Computer Science (BSc)',
       institution: 'Herald College Kathmandu',
       location: 'Naxal, Kathmandu',
-      period: '2021 – Present',
+      period: '2023 – Present',
       detail: 'Affiliated with University of Wolverhampton, UK. 3-year degree program. Graduating soon.',
       gpa: 'Graduating Soon',
     },
@@ -159,7 +159,6 @@ export default function About() {
         </div>
 
       </div>
-
       <style>{`
         @media (max-width: 768px) {
           .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
