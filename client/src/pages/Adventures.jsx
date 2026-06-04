@@ -1,4 +1,14 @@
 import { useState } from 'react'
+import gosaikunda from '../assets/adventures/Gos.jpg'
+import langtang from '../assets/adventures/tserkori.jpg'
+import panchpokhari from '../assets/adventures/panchpokhari.JPG'
+import bhairav from '../assets/adventures/bhairav.jpg'
+import nuwakot from '../assets/adventures/nuwakot.webp'
+import chitlang from '../assets/adventures/chitlang.JPG'
+import sailung from '../assets/adventures/sailung.webp'
+import chinaborder from '../assets/adventures/chinaborder.jpg'
+import football from '../assets/adventures/football.jpg'
+import basketball from '../assets/adventures/basketball.jpg'
 
 const adventures = {
   treks: [
@@ -12,17 +22,19 @@ const adventures = {
       description: 'A sacred alpine lake trek through rhododendron forests and high mountain passes. One of the most spiritual trails in Nepal.',
       highlights: ['Lauribinayak Pass', 'Sacred Gosaikunda Lake', 'Himalayan Views', 'Rhododendron Forests'],
       difficulty: 'Moderate',
+      image: gosaikunda,
     },
     {
       id: 2,
-      title: 'Tserko Ri - Langtang ',
+      title: 'Tserko Ri - Langtang',
       location: 'Langtang, Nepal',
-      elevation: '4,984',
+      elevation: '4,984m',
       duration: '5 Days',
       distance: '70-80 km',
       description: 'Through the valley of glaciers — dense forests, yak pastures, and the warmth of Tamang culture make this an unforgettable journey.',
       highlights: ['Kyanjin Gompa', 'Langtang Village', 'Tsergo Ri', 'Cheese Factory'],
       difficulty: 'Difficult',
+      image: langtang,
     },
     {
       id: 3,
@@ -34,17 +46,19 @@ const adventures = {
       description: 'Five sacred ponds nestled in the high Himalayas. A hidden gem off the beaten path with raw, untouched beauty.',
       highlights: ['Five Sacred Lakes', 'Remote Trails', 'Tamang Villages', 'Panoramic Peaks'],
       difficulty: 'Moderate',
+      image: panchpokhari,
     },
     {
       id: 4,
       title: 'Bhairav Kunda',
       location: 'Sindhupalchok, Nepal',
-      elevation: '4250m',
+      elevation: '4,250m',
       duration: '2 Days',
-      distance: '4 to 6 km',
+      distance: '4-6 km',
       description: 'A mystical trek to the sacred Bhairav Kunda lake, deep in the mountains of Sindhupalchok. Spiritual, wild and raw.',
       highlights: ['Sacred Kunda', 'Dense Pine Forests', 'Remote Villages', 'Wildlife'],
       difficulty: 'Easy',
+      image: bhairav,
     },
   ],
   rides: [
@@ -57,6 +71,7 @@ const adventures = {
       description: 'A historic ride to the ancient town of Nuwakot, passing through rivers, hills and old trade routes. Raw Nepali countryside at its best.',
       highlights: ['Nuwakot Durbar', 'Trishuli River', 'Hill Roads', 'Historic Town'],
       difficulty: 'Moderate',
+      image: nuwakot,
     },
     {
       id: 6,
@@ -67,6 +82,7 @@ const adventures = {
       description: 'One of the most scenic rides out of the valley — through the peaceful village of Chitlang and down to the stunning Kulekhani reservoir.',
       highlights: ['Chitlang Village', 'Kulekhani Reservoir', 'Valley Descents', 'Forest Trails'],
       difficulty: 'Challenging',
+      image: chitlang,
     },
     {
       id: 7,
@@ -77,30 +93,34 @@ const adventures = {
       description: 'A serious mountain ride to Sailung hill — steep climbs, thin air and a 360 degree panorama of the Himalayas waiting at the top.',
       highlights: ['Himalayan Panorama', 'Steep Climbs', 'Remote Roads', 'Sunrise Point'],
       difficulty: 'Challenging',
-    },
-    {
-      "id": 8,
-      "title": 'China Border Ride',
-      "location": 'Kathmandu to Tatopani',
-      "distance": '115 km',
-      "duration": '6 hours',
-      "description": 'A scenic journey to the Tatopani border crossing with China. This route takes you through the Araniko Highway, offering dramatic views of the Bhote Koshi River, steep canyons, and the transition into the high Himalayas.',
-      "highlights": ['Tatopani Border', 'Bhote Koshi River', 'Araniko Highway', 'Mountain Canyons'],
-      "difficulty": 'Moderate',
-    }
-  ],
-  sports: [
-    {
-      id: 7,
-      title: 'Football',
-      description: 'Playing football since school — midfield is home. Always up for a game.',
-      icon: '⚽',
+      image: sailung,
     },
     {
       id: 8,
+      title: 'China Border Ride',
+      location: 'Kathmandu to Tatopani',
+      distance: '115 km',
+      duration: '6 hours',
+      description: 'A scenic journey to the Tatopani border crossing with China through the Araniko Highway, offering dramatic views of the Bhote Koshi River and steep mountain canyons.',
+      highlights: ['Tatopani Border', 'Bhote Koshi River', 'Araniko Highway', 'Mountain Canyons'],
+      difficulty: 'Moderate',
+      image: chinaborder,
+    },
+  ],
+  sports: [
+    {
+      id: 9,
+      title: 'Football',
+      description: 'Playing football since school — midfield is home. Always up for a game.',
+      icon: '⚽',
+      image: football,
+    },
+    {
+      id: 10,
       title: 'Basketball',
       description: 'Court sessions, pickup games, and weekend tournaments. Point guard energy.',
       icon: '🏀',
+      image: basketball,
     },
   ],
 }
@@ -111,6 +131,7 @@ const difficultyColor = {
   'Easy': '#22c55e',
   'Moderate': '#f59e0b',
   'Challenging': '#ef4444',
+  'Difficult': '#ef4444',
 }
 
 export default function Adventures() {
@@ -119,6 +140,15 @@ export default function Adventures() {
   const showTreks = activeTab === 'All' || activeTab === 'Treks'
   const showRides = activeTab === 'All' || activeTab === 'Rides'
   const showSports = activeTab === 'All' || activeTab === 'Sports'
+
+  const CardImage = ({ src, alt, height = '200px' }) => (
+    <div style={{ width: '100%', height, overflow: 'hidden' }}>
+      <img src={src} alt={alt}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', transition: 'transform 0.4s' }}
+        onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.04)'}
+        onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} />
+    </div>
+  )
 
   return (
     <main style={{ minHeight: '100vh', background: '#FAFAFA', paddingTop: '100px', paddingBottom: '80px' }}>
@@ -165,50 +195,46 @@ export default function Adventures() {
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(480px, 1fr))', gap: '24px' }}>
               {adventures.treks.map(trek => (
-                <div key={trek.id} style={{ background: '#fff', border: '1px solid #E5E5E5', padding: '32px', transition: 'all 0.3s' }}
+                <div key={trek.id} style={{ background: '#fff', border: '1px solid #E5E5E5', overflow: 'hidden', transition: 'all 0.3s' }}
                   onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.08)'}
                   onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}>
 
-                  {/* Top row */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', fontWeight: 700, color: '#111' }}>
-                      {trek.title}
-                    </h3>
-                    <span style={{ fontSize: '0.7rem', padding: '4px 10px', background: '#f5f5f5', color: difficultyColor[trek.difficulty], fontWeight: 500, letterSpacing: '0.05em' }}>
-                      {trek.difficulty}
-                    </span>
-                  </div>
+                  <CardImage src={trek.image} alt={trek.title} height="220px" />
 
-                  <p style={{ color: '#888', fontSize: '0.8rem', letterSpacing: '0.05em', marginBottom: '12px' }}>
-                    📍 {trek.location}
-                  </p>
-
-                  <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '20px', fontWeight: 300 }}>
-                    {trek.description}
-                  </p>
-
-                  {/* Stats */}
-                  <div style={{ display: 'flex', gap: '24px', marginBottom: '20px', paddingTop: '16px', borderTop: '1px solid #F0F0F0' }}>
-                    {[
-                      { label: 'Elevation', value: trek.elevation },
-                      { label: 'Duration', value: trek.duration },
-                      { label: 'Distance', value: trek.distance },
-
-                    ].map(stat => (
-                      <div key={stat.label}>
-                        <div style={{ fontSize: '0.65rem', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2px' }}>{stat.label}</div>
-                        <div style={{ fontSize: '0.85rem', fontWeight: 500, color: '#111' }}>{stat.value}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Highlights */}
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                    {trek.highlights.map(h => (
-                      <span key={h} style={{ fontSize: '0.7rem', padding: '4px 10px', border: '1px solid #E5E5E5', color: '#666', letterSpacing: '0.05em' }}>
-                        {h}
+                  <div style={{ padding: '28px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
+                      <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', fontWeight: 700, color: '#111' }}>
+                        {trek.title}
+                      </h3>
+                      <span style={{ fontSize: '0.7rem', padding: '4px 10px', background: '#f5f5f5', color: difficultyColor[trek.difficulty], fontWeight: 500 }}>
+                        {trek.difficulty}
                       </span>
-                    ))}
+                    </div>
+
+                    <p style={{ color: '#888', fontSize: '0.8rem', marginBottom: '12px' }}>📍 {trek.location}</p>
+
+                    <p style={{ color: '#555', fontSize: '0.88rem', lineHeight: 1.7, marginBottom: '20px', fontWeight: 300 }}>
+                      {trek.description}
+                    </p>
+
+                    <div style={{ display: 'flex', gap: '24px', marginBottom: '16px', paddingTop: '16px', borderTop: '1px solid #F0F0F0' }}>
+                      {[
+                        { label: 'Elevation', value: trek.elevation },
+                        { label: 'Duration', value: trek.duration },
+                        { label: 'Distance', value: trek.distance },
+                      ].map(stat => (
+                        <div key={stat.label}>
+                          <div style={{ fontSize: '0.65rem', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2px' }}>{stat.label}</div>
+                          <div style={{ fontSize: '0.85rem', fontWeight: 500, color: '#111' }}>{stat.value}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {trek.highlights.map(h => (
+                        <span key={h} style={{ fontSize: '0.68rem', padding: '3px 10px', border: '1px solid #E5E5E5', color: '#666' }}>{h}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -222,31 +248,36 @@ export default function Adventures() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.8rem', fontWeight: 700, color: '#111', marginBottom: '32px', fontStyle: 'italic' }}>
               Rides
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(460px, 1fr))', gap: '24px' }}>
               {adventures.rides.map(ride => (
-                <div key={ride.id} style={{ background: '#fff', border: '1px solid #E5E5E5', padding: '32px', transition: 'all 0.3s' }}
+                <div key={ride.id} style={{ background: '#fff', border: '1px solid #E5E5E5', overflow: 'hidden', transition: 'all 0.3s' }}
                   onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.08)'}
                   onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#111' }}>{ride.title}</h3>
-                    <span style={{ fontSize: '0.7rem', padding: '4px 10px', background: '#f5f5f5', color: difficultyColor[ride.difficulty], fontWeight: 500 }}>{ride.difficulty}</span>
-                  </div>
-                  <p style={{ color: '#888', fontSize: '0.8rem', marginBottom: '12px' }}>📍 {ride.location}</p>
-                  <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '20px', fontWeight: 300 }}>{ride.description}</p>
-                  <div style={{ display: 'flex', gap: '24px', paddingTop: '16px', borderTop: '1px solid #F0F0F0', marginBottom: '16px' }}>
-                    <div>
-                      <div style={{ fontSize: '0.65rem', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2px' }}>Distance</div>
-                      <div style={{ fontSize: '0.85rem', fontWeight: 500, color: '#111' }}>{ride.distance}</div>
+
+                  <CardImage src={ride.image} alt={ride.title} height="200px" />
+
+                  <div style={{ padding: '28px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '10px' }}>
+                      <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#111' }}>{ride.title}</h3>
+                      <span style={{ fontSize: '0.7rem', padding: '4px 10px', background: '#f5f5f5', color: difficultyColor[ride.difficulty], fontWeight: 500 }}>{ride.difficulty}</span>
                     </div>
-                    <div>
-                      <div style={{ fontSize: '0.65rem', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2px' }}>Duration</div>
-                      <div style={{ fontSize: '0.85rem', fontWeight: 500, color: '#111' }}>{ride.duration}</div>
+                    <p style={{ color: '#888', fontSize: '0.8rem', marginBottom: '12px' }}>📍 {ride.location}</p>
+                    <p style={{ color: '#555', fontSize: '0.88rem', lineHeight: 1.7, marginBottom: '16px', fontWeight: 300 }}>{ride.description}</p>
+                    <div style={{ display: 'flex', gap: '24px', paddingTop: '16px', borderTop: '1px solid #F0F0F0', marginBottom: '16px' }}>
+                      <div>
+                        <div style={{ fontSize: '0.65rem', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2px' }}>Distance</div>
+                        <div style={{ fontSize: '0.85rem', fontWeight: 500, color: '#111' }}>{ride.distance}</div>
+                      </div>
+                      <div>
+                        <div style={{ fontSize: '0.65rem', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '2px' }}>Duration</div>
+                        <div style={{ fontSize: '0.85rem', fontWeight: 500, color: '#111' }}>{ride.duration}</div>
+                      </div>
                     </div>
-                  </div>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                    {ride.highlights.map(h => (
-                      <span key={h} style={{ fontSize: '0.7rem', padding: '4px 10px', border: '1px solid #E5E5E5', color: '#666' }}>{h}</span>
-                    ))}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {ride.highlights.map(h => (
+                        <span key={h} style={{ fontSize: '0.68rem', padding: '3px 10px', border: '1px solid #E5E5E5', color: '#666' }}>{h}</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -260,14 +291,17 @@ export default function Adventures() {
             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.8rem', fontWeight: 700, color: '#111', marginBottom: '32px', fontStyle: 'italic' }}>
               Sports
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: '24px' }}>
               {adventures.sports.map(sport => (
-                <div key={sport.id} style={{ background: '#fff', border: '1px solid #E5E5E5', padding: '32px', transition: 'all 0.3s' }}
+                <div key={sport.id} style={{ background: '#fff', border: '1px solid #E5E5E5', overflow: 'hidden', transition: 'all 0.3s' }}
                   onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.08)'}
                   onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}>
-                  <div style={{ fontSize: '2.5rem', marginBottom: '16px' }}>{sport.icon}</div>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#111', marginBottom: '12px' }}>{sport.title}</h3>
-                  <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.7, fontWeight: 300 }}>{sport.description}</p>
+                  <CardImage src={sport.image} alt={sport.title} height="220px" />
+                  <div style={{ padding: '28px' }}>
+                    <div style={{ fontSize: '2rem', marginBottom: '12px' }}>{sport.icon}</div>
+                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: '#111', marginBottom: '10px' }}>{sport.title}</h3>
+                    <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.7, fontWeight: 300 }}>{sport.description}</p>
+                  </div>
                 </div>
               ))}
             </div>

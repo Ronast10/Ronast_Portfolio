@@ -1,3 +1,8 @@
+import fitfusion from '../assets/projects/FitFu.png'
+import movie from '../assets/projects/Movie.png'
+import adelaide from '../assets/projects/Adelaide.png'
+import ghumnaJam from '../assets/projects/ghymnajam.png'
+
 const projects = [
   {
     id: 1,
@@ -9,11 +14,23 @@ const projects = [
     techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'eSewa', 'Khalti'],
     features: ['Membership Management', 'Trainer Chat', 'Fitness Shop', 'eSewa & Khalti Payments', 'Diet Plan Generator', 'BMI Calculator', 'Video Suggestions'],
     githubUrl: 'https://github.com/Ronast10/Fitfusion-FYP/tree/main',
-    status: 'Completed',
+    image: fitfusion,
     featured: true,
   },
   {
     id: 2,
+    title: 'MovieHerum',
+    subtitle: 'Movie Discovery & Review Platform',
+    description: 'A full-stack movie discovery and review platform. Users can browse movies powered by the TMDB API, rate and review them, maintain a personal watchlist, and manage their profile. Built with secure JWT auth, Google OAuth login, and email verification.',
+    role: 'Full Stack Developer',
+    type: 'Full Stack Project',
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'TMDB API', 'JWT', 'Google OAuth', 'Zustand'],
+    features: ['JWT Authentication', 'Google OAuth Login', 'Email Verification', 'TMDB Movie Browsing', 'Rate & Review Movies', 'Personal Watchlist', 'User Profiles'],
+    githubUrl: 'https://github.com/Ronast10/MovieHerum',
+    image: movie,
+  },
+  {
+    id: 3,
     title: 'Adelaide Weather',
     subtitle: 'Real-time Weather Dashboard',
     description: 'A weather website built specifically for Adelaide, Australia. Displays real-time weather data along with forecasts for the upcoming month, all fetched from live weather APIs. Clean dashboard with detailed climate insights.',
@@ -22,11 +39,10 @@ const projects = [
     techStack: ['React', 'Weather API', 'JavaScript', 'CSS'],
     features: ['Real-time Weather Data', 'Monthly Forecast', 'Live API Integration', 'Adelaide Specific', 'Detailed Climate Stats'],
     githubUrl: 'https://github.com/Ronast10/WeatherWebsite',
-    status: 'Completed',
-    featured: false,
+    image: adelaide,
   },
   {
-    id: 3,
+    id: 4,
     title: 'GhumnaJam',
     subtitle: 'Travel Discovery Platform',
     description: 'A TripAdvisor-style travel discovery platform for Nepal. Users can explore destinations, read reviews, and plan trips. I contributed as a Business Analyst — defining requirements, user flows, and feature specifications for the development team.',
@@ -35,8 +51,7 @@ const projects = [
     techStack: ['Requirements Analysis', 'User Stories', 'Wireframing', 'Documentation'],
     features: ['Destination Discovery', 'User Reviews', 'Trip Planning', 'Nepal Focused', 'BA Documentation'],
     githubUrl: 'https://github.com/StalkYy-06/GhumGham',
-    status: 'Completed',
-    featured: false,
+    image: ghumnaJam,
   },
 ]
 
@@ -61,13 +76,12 @@ export default function Projects() {
           </p>
         </div>
 
-        {/* Featured Project — FitFusion */}
+        {/* Featured — FitFusion */}
         <div style={{ marginBottom: '48px' }}>
           <div style={{ background: '#fff', border: '1px solid #E5E5E5', overflow: 'hidden', transition: 'all 0.3s' }}
             onMouseEnter={e => e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.08)'}
             onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}>
 
-            {/* Featured banner */}
             <div style={{ background: '#111', padding: '10px 32px', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#fff' }} />
               <span style={{ fontSize: '0.7rem', color: '#fff', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
@@ -75,15 +89,17 @@ export default function Projects() {
               </span>
             </div>
 
-            <div style={{ padding: '40px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start' }} className="project-featured-grid">
+            {/* Project Image */}
+            <div style={{ width: '100%', height: '320px', overflow: 'hidden', borderBottom: '1px solid #E5E5E5' }}>
+              <img src={projects[0].image} alt={projects[0].title}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+            </div>
 
-              {/* Left */}
+            <div style={{ padding: '40px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'start' }} className="project-featured-grid">
               <div>
-                <div style={{ marginBottom: '8px' }}>
-                  <span style={{ fontSize: '0.7rem', color: '#aaa', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-                    {projects[0].type}
-                  </span>
-                </div>
+                <span style={{ fontSize: '0.7rem', color: '#aaa', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
+                  {projects[0].type}
+                </span>
                 <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', fontWeight: 700, color: '#111', lineHeight: 1, marginBottom: '8px' }}>
                   {projects[0].title}
                 </h2>
@@ -93,8 +109,6 @@ export default function Projects() {
                 <p style={{ color: '#555', fontSize: '0.95rem', lineHeight: 1.8, marginBottom: '28px', fontWeight: 300 }}>
                   {projects[0].description}
                 </p>
-
-                {/* Tech stack */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
                   {projects[0].techStack.map(tech => (
                     <span key={tech} style={{ fontSize: '0.72rem', padding: '5px 12px', background: '#F5F5F5', color: '#555', letterSpacing: '0.05em' }}>
@@ -102,17 +116,12 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-
-                {/* Links */}
-                <div style={{ display: 'flex', gap: '16px' }}>
-                  
-                  <a href={projects[0].githubUrl} style={{ border: '1px solid #111', color: '#111', padding: '11px 24px', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none' }}>
-                    GitHub
-                  </a>
-                </div>
+                <a href={projects[0].githubUrl} target="_blank" rel="noreferrer"
+                  style={{ border: '1px solid #111', color: '#111', padding: '11px 24px', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none' }}>
+                  GitHub
+                </a>
               </div>
 
-              {/* Right — features */}
               <div>
                 <h4 style={{ fontSize: '0.7rem', color: '#aaa', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '20px' }}>
                   Key Features
@@ -120,15 +129,11 @@ export default function Projects() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                   {projects[0].features.map((f, i) => (
                     <div key={f} style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '12px 16px', background: '#FAFAFA', border: '1px solid #F0F0F0' }}>
-                      <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '0.8rem', color: '#ccc', fontWeight: 700 }}>
-                        0{i + 1}
-                      </span>
-                      <span style={{ fontSize: '0.88rem', color: '#444', fontWeight: 400 }}>{f}</span>
+                      <span style={{ fontFamily: "'Playfair Display', serif", fontSize: '0.8rem', color: '#ccc', fontWeight: 700 }}>0{i + 1}</span>
+                      <span style={{ fontSize: '0.88rem', color: '#444' }}>{f}</span>
                     </div>
                   ))}
                 </div>
-
-                {/* Role badge */}
                 <div style={{ marginTop: '24px', padding: '16px', border: '1px solid #E5E5E5', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontSize: '0.7rem', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase' }}>My Role</span>
                   <span style={{ fontSize: '0.85rem', color: '#111', fontWeight: 500 }}>{projects[0].role}</span>
@@ -138,54 +143,71 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Other projects */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(480px, 1fr))', gap: '24px' }}>
+        {/* Other Projects */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(460px, 1fr))', gap: '24px' }}>
           {projects.slice(1).map(project => (
             <div key={project.id}
-              style={{ background: '#fff', border: '1px solid #E5E5E5', padding: '36px', transition: 'all 0.3s' }}
+              style={{ background: '#fff', border: '1px solid #E5E5E5', overflow: 'hidden', transition: 'all 0.3s' }}
               onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 32px rgba(0,0,0,0.08)'}
               onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}>
 
-              {/* Top */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                <div>
-                  <span style={{ fontSize: '0.68rem', color: '#aaa', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>
-                    {project.type}
+              {/* Image */}
+              <div style={{ width: '100%', height: '200px', overflow: 'hidden' }}>
+                <img src={project.image} alt={project.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', transition: 'transform 0.4s' }}
+                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.03)'}
+                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} />
+              </div>
+
+              <div style={{ padding: '28px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
+                  <div>
+                    <span style={{ fontSize: '0.68rem', color: '#aaa', letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>
+                      {project.type}
+                    </span>
+                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', fontWeight: 700, color: '#111', lineHeight: 1 }}>
+                      {project.title}
+                    </h3>
+                  </div>
+                  <span style={{ fontSize: '0.68rem', padding: '4px 10px', background: '#F5F5F5', color: '#888', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
+                    {project.role}
                   </span>
-                  <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.6rem', fontWeight: 700, color: '#111', lineHeight: 1 }}>
-                    {project.title}
-                  </h3>
                 </div>
-                <span style={{ fontSize: '0.68rem', padding: '4px 10px', background: '#F5F5F5', color: '#888', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
-                  {project.role}
-                </span>
-              </div>
 
-              <p style={{ color: '#888', fontSize: '0.82rem', fontStyle: 'italic', marginBottom: '14px' }}>
-                {project.subtitle}
-              </p>
+                <p style={{ color: '#888', fontSize: '0.82rem', fontStyle: 'italic', marginBottom: '12px' }}>
+                  {project.subtitle}
+                </p>
 
-              <p style={{ color: '#555', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: '24px', fontWeight: 300 }}>
-                {project.description}
-              </p>
+                <p style={{ color: '#555', fontSize: '0.88rem', lineHeight: 1.75, marginBottom: '20px', fontWeight: 300 }}>
+                  {project.description}
+                </p>
 
-              {/* Tech */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
-                {project.techStack.map(tech => (
-                  <span key={tech} style={{ fontSize: '0.7rem', padding: '4px 10px', background: '#F5F5F5', color: '#666', letterSpacing: '0.04em' }}>
-                    {tech}
-                  </span>
-                ))}
-              </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '20px' }}>
+                  {project.techStack.map(tech => (
+                    <span key={tech} style={{ fontSize: '0.68rem', padding: '4px 10px', background: '#F5F5F5', color: '#666' }}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-              {/* Divider */}
-              <div style={{ height: '1px', background: '#F0F0F0', marginBottom: '20px' }} />
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '20px' }}>
+                  {project.features.slice(0, 4).map(f => (
+                    <span key={f} style={{ fontSize: '0.65rem', padding: '3px 8px', border: '1px solid #E5E5E5', color: '#888' }}>
+                      {f}
+                    </span>
+                  ))}
+                  {project.features.length > 4 && (
+                    <span style={{ fontSize: '0.65rem', padding: '3px 8px', border: '1px solid #E5E5E5', color: '#bbb' }}>
+                      +{project.features.length - 4} more
+                    </span>
+                  )}
+                </div>
 
-              {/* Links */}
-              <div style={{ display: 'flex', gap: '16px' }}>
-                
-                <a href={project.githubUrl} style={{ color: '#111', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none', borderBottom: '1px solid #ddd', paddingBottom: '2px' }}>
-                  GitHub
+                <div style={{ height: '1px', background: '#F0F0F0', marginBottom: '16px' }} />
+
+                <a href={project.githubUrl} target="_blank" rel="noreferrer"
+                  style={{ color: '#111', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none', borderBottom: '1px solid #111', paddingBottom: '2px', fontWeight: 500 }}>
+                  GitHub →
                 </a>
               </div>
             </div>
