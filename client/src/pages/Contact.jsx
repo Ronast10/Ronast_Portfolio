@@ -172,7 +172,7 @@ export default function Contact() {
               <p style={{ color: '#22c55e', fontSize: '0.85rem', marginBottom: '16px' }}>Message sent! I'll get back to you soon.</p>
             )}
             {status === 'error' && (
-              <p style={{ color: '#ef4444', fontSize: '0.85rem', marginBottom: '16px' }}>Something went wrong. Try emailing me directly.</p>
+              <p style={{ color: '#ef4444', fontSize: '0.85rem', marginBottom: '16px' }}>Something went wrong. Try emailing me directly at ronastacharya@gmail.com.</p>
             )}
 
             <button
